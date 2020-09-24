@@ -11,14 +11,14 @@ git clone -b monolith https://github.com/express42/reddit.git
 cd reddit && bundle install
 
 #Create service user
-useradd -d /dev/null -s /usr/sbin/nologin reddit-web
+useradd -M -u 777 reddit-web
 chown reddit-web:reddit-web /opt/reddit/* 
 
 #Create unit file
-sudo cat <<'EOF' > /opt/reddit-web.service
+cat > ~/reddit-web.service <<'EOF' 
 [Unit]
 Description=Puma HTTP Server
-After=network.target
+Requires=network.target
 
 [Service]
 Type=simple
@@ -27,7 +27,7 @@ User=reddit-web
 
 WorkingDirectory=/opt/reddit
 
-ExecStart=/bin/bash -lc 'puma -d'
+ExecStart='/usr/local/bin/puma'
 
 Restart=always
 
@@ -36,6 +36,6 @@ WantedBy=multi-user.target
 EOF
 
 #Create service
-sudo mv /opt/reddit-web.service /etc/systemd/reddit-web.service
+mv ~/reddit-web.service /etc/systemd/system/reddit-web.service
 
-sudo systemctl daemon-reload && sudo systemctl enable reddit-web.service
+systemctl daemon-reload && systemctl enable reddit-web

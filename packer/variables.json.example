@@ -1,6 +1,6 @@
 {
     "folder_id": "48162342",           
-    "service_account_key_file": "secrets/key.json",
+    "service_account_key_file": "key.json.example",
     "source_image_id": "655360",
     "instance_cores" : "16",
     "instance_mem_gb" : "96",
