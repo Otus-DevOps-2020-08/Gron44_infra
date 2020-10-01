@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt update -y
+apt update -y
 
 if [ $(dpkg-query -W -f='${Status}' ruby-full 2>/dev/null | grep -c "ok installed") -eq 0 ]
     then
