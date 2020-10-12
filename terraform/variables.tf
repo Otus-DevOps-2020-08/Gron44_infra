@@ -33,7 +33,3 @@ variable region_id {
   description = "Region"
   default     = "ru-central1"
 }
-
-variable vpc_id {
-  description = "VPC id"
-}
