@@ -1,0 +1,7 @@
+folder_id                = "AAAAAAAAAAAAAAAAAAAA"
+zone                     = "ru-central1-a"
+public_key_path          = "AAAAAAAAAAAAAAAAA"
+private_key_path         = "AAAAAAAAAAAAA"
+image_id                 = "AAAAAAAAAAAAAAAAAAAA"
+subnet_id                = "AAAAAAAAAAAAAAAAAAAA"
+service_account_key_file = "AAAAAAAA"
