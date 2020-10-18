@@ -1,10 +1,10 @@
 {
-    "folder_id": "48162342",           
+    "folder_id": "48162342",
     "service_account_key_file": "key.json.example",
     "source_image_id": "655360",
     "instance_cores" : "16",
     "instance_mem_gb" : "96",
     "disk_type": "network-ssd",
-    "disk_size_gb": "4096", 
+    "disk_size_gb": "4096",
     "preemptible": "false"
 }

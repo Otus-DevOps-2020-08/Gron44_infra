@@ -13,7 +13,7 @@
             "instance_cores" :          "{{user `instance_cores`}}",
             "instance_mem_gb" :         "{{user `instance_mem_gb`}}",
             "disk_type":                "{{user `disk_type`}}",
-            "disk_size_gb":             "{{user `disk_size_gb`}}", 
+            "disk_size_gb":             "{{user `disk_size_gb`}}",
             "preemptible":              "{{user `preemptible`}}"
         }
     ],
