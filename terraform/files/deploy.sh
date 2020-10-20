@@ -3,8 +3,9 @@ set -e
 APP_DIR=${1:-$HOME}
 if [ $(dpkg-query -W -f='${Status}' git 2>/dev/null | grep -c "ok installed") -eq 0 ]
     then
-        sudo apt-get update -y
-        sudo apt-get install git -y
+        sudo apt update -y
+        sleep 5
+        sudo apt install git -y
 else
     echo "git already installed.  Skipping..."
 fi
