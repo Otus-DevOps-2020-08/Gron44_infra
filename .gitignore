@@ -3,3 +3,6 @@
 *.tfstate.backup
 *.tfvars
 .terraform/
+key.json
+packer/variables.json
+backend.tf

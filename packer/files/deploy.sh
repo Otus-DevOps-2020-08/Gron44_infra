@@ -12,10 +12,10 @@ cd reddit && bundle install
 
 #Create service user
 useradd -M -u 777 reddit-web
-chown reddit-web:reddit-web /opt/reddit/* 
+chown reddit-web:reddit-web /opt/reddit/*
 
 #Create unit file
-cat > ~/reddit-web.service <<'EOF' 
+cat > ~/reddit-web.service <<'EOF'
 [Unit]
 Description=Puma HTTP Server
 Requires=network.target

@@ -3,6 +3,7 @@ Description=Puma HTTP Server
 Requires=network.target
 
 [Service]
+EnvironmentFile=/home/ubuntu/puma-environment
 Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu/reddit

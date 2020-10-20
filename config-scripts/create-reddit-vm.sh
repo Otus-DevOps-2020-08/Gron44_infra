@@ -10,4 +10,3 @@ yc compute instance create \
     --create-boot-disk image-id=$image_id,type=$disk_type,size=$disk_size_gb \
     --ssh-key $ssh_key \
     --preemptible
-

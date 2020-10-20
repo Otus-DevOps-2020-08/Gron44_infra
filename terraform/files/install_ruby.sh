@@ -1,7 +1,5 @@
 #!/bin/bash
 sudo apt-get update -y
-sudo apt update -y
-sleep 5
 
 if [ $(dpkg-query -W -f='${Status}' ruby-full 2>/dev/null | grep -c "ok installed") -eq 0 ]
     then
@@ -23,4 +21,3 @@ if [ $(dpkg-query -W -f='${Status}' build-essential 2>/dev/null | grep -c "ok in
 else
     echo "build-essential already installed.  Skipping..."
 fi
-sleep 5
