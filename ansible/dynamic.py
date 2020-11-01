@@ -21,8 +21,10 @@ a = t.output()
 
 inv = {
   "app": {
-    "hosts": [a[external_var_name_app]['value']]
-    },
+    "hosts": [a[external_var_name_app]['value']],
+    "vars": {
+      "db_host": a[external_var_name_db]['value']
+    }},
   "db": {
     "hosts": [a[external_var_name_db]['value']]
       }

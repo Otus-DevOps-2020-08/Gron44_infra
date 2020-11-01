@@ -36,8 +36,8 @@ resource "yandex_compute_instance" "db" {
     # путь до приватного ключа
     private_key = file(var.private_key_path)
   }
-
+/*
   provisioner "remote-exec" {
     script = "../files/install_mongodb.sh"
-  }
+  }*/
 }

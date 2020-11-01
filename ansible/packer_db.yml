@@ -1,0 +1,26 @@
+---
+  - name: Playbook to install mongoDB 4.0
+    hosts: all
+    become: true
+    tasks:
+      - name: Add mongo APT key
+        apt_key:
+          url: https://www.mongodb.org/static/pgp/server-4.0.asc
+          state: present
+
+      - name: Add MongoDB 4.0 repository into sources list
+        apt_repository:
+          repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse
+          state: present
+
+      - name: Ansible apt install ca-certificates apt-transport-https mongodb-org
+        apt:
+          update_cache: yes
+          cache_valid_time: 86400 #One day
+          name: ['ca-certificates','apt-transport-https', 'mongodb-org']
+          state: present
+
+      - name: Configure service supervisor
+        systemd:
+          name: mongod
+          enabled: yes
