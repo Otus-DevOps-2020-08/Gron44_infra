@@ -1,0 +1,12 @@
+---
+  - name: Install git, ruby, bundler
+    hosts: all
+    become: true
+    tasks:
+      - name: Install git, ruby, bundler
+        become: true
+        apt:
+          update_cache: yes
+          cache_valid_time: 86400 #One day
+          name: ['git', 'ruby-full', 'ruby-bundler', 'build-essential']
+          state: present

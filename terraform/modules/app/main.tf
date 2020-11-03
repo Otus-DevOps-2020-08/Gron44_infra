@@ -36,7 +36,7 @@ resource "yandex_compute_instance" "app" {
     # путь до приватного ключа
     private_key = file(var.private_key_path)
   }
-
+/*
   provisioner "remote-exec" {
     inline = [
       "echo DATABASE_URL='${var.db_ip}:27017' | tee -a ~/puma-environment"
@@ -50,5 +50,5 @@ resource "yandex_compute_instance" "app" {
 
   provisioner "remote-exec" {
     script = "../files/deploy.sh"
-  }
+  }*/
 }
