@@ -3,8 +3,8 @@ sudo: required
 language: bash
 before_install:
 # packer validate
-- packer validate -var-file packer/variables.json packer/app.json
-- packer validate -var-file packer/variables.json packer/db.json
+- packer validate -var-file packer/variables.json.example packer/app.json
+- packer validate -var-file packer/variables.json.example packer/db.json
 # terraform validate
 # tflint
 - tflint terraform/stage/
