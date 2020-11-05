@@ -1,0 +1,14 @@
+---
+- name: Configure App
+  hosts: app
+  become: true
+  roles:
+    - app
+    - role: jdauphant.nginx
+      nginx_http_params:
+        - access_log "/var/log/nginx/access.log"
+      nginx_sites:
+        default:
+          - listen {{listen}}
+          - server_name {{server_name}}
+          - location / { proxy_pass {{location_root}}; }

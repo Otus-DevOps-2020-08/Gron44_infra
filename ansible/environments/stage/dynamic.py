@@ -26,8 +26,10 @@ inv = {
       "db_host": a[external_var_name_db]['value']
     }},
   "db": {
-    "hosts": [a[external_var_name_db]['value']]
-      }
+    "hosts": [a[external_var_name_db]['value']],
+    "vars": {
+      "mongo_bind_ip": a[external_var_name_app]['value']
+    }},
 }
 
 parser = argparse.ArgumentParser()

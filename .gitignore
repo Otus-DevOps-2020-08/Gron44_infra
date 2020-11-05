@@ -8,3 +8,5 @@ secrets/
 key.json
 packer/variables.json
 backend.tf
+jdauphant.nginx
+vault.key
