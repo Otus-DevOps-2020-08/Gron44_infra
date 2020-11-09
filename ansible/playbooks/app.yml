@@ -9,6 +9,6 @@
         - access_log "/var/log/nginx/access.log"
       nginx_sites:
         default:
-          - listen {{listen}}
-          - server_name {{server_name}}
-          - location / { proxy_pass {{location_root}}; }
+          - listen 80
+          - server_name reddit
+          - location / { proxy_pass http://127.0.0.1:9292; }

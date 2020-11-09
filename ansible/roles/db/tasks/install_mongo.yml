@@ -1,0 +1,31 @@
+---
+- name: Add mongo APT key
+  become: true
+  apt_key:
+    url: https://www.mongodb.org/static/pgp/server-4.0.asc
+    state: present
+  tags: install
+
+- name: Add MongoDB 4.0 repository into sources list
+  become: true
+  apt_repository:
+    repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse
+    state: present
+  tags: install
+
+- name: Ansible apt install ca-certificates apt-transport-https mongodb-org
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400 #One day
+    name: ['ca-certificates','apt-transport-https', 'mongodb-org']
+    state: present
+  tags: install
+
+- name: Configure service supervisor
+  become: true
+  systemd:
+    name: mongod
+    enabled: yes
+    state: started
+  tags: install
